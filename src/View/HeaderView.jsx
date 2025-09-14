@@ -1,9 +1,6 @@
 import React from 'react'
 
-const HeaderView = () => {
-    function showPage(page){
-        console.log(page)
-    }
+const HeaderView = ({userName,showPage}) => {
     function toggleMobileMenu(page){
         console.log(page)
     }
@@ -17,7 +14,7 @@ const HeaderView = () => {
     <header>
             <div className="container">
                 <div className="header-content">
-                    <a href="#" className="logo" id="header-logo" onClick={showPage('home')}>
+                    <a href="#" className="logo" id="header-logo" onClick={()=>showPage('home')}>
                         <i className="fas fa-shopping-bag"></i>
                         TechMart
                     </a>
@@ -27,11 +24,11 @@ const HeaderView = () => {
                     </button>
 
                     <nav className="nav-menu" id="nav-menu">
-                        <a href="#" className="nav-link active" onClick={showPage('home')} data-page="home">Home</a>
-                        <a href="#" className="nav-link" onClick={showPage('products')} data-page="products">Products</a>
-                        <a href="#" className="nav-link" onClick={showPage('categories')} data-page="categories">Categories</a>
-                        <a href="#" className="nav-link user-only" onClick={showPage('orders')} data-page="orders">My Orders</a>
-                        <a href="#" className="nav-link admin-only hidden" onClick={showPage('admin')} data-page="admin">Admin Panel</a>
+                        <a href="#" className="nav-link active" onClick={()=>showPage('home')} data-page="home">Home</a>
+                        <a href="#" className="nav-link" onClick={()=>showPage('products')} data-page="products">Products</a>
+                        <a href="#" className="nav-link" onClick={()=>showPage('categories')} data-page="categories">Categories</a>
+                        <a href="#" className="nav-link user-only" onClick={()=>howPage('orders')} data-page="orders">My Orders</a>
+                        <a href="#" className="nav-link admin-only hidden" onClick={()=>showPage('admin')} data-page="admin">Admin Panel</a>
                     </nav>
 
                     <div className="search-container user-only">
@@ -50,15 +47,15 @@ const HeaderView = () => {
                             <i className="fas fa-moon" id="theme-icon"></i>
                         </button>
                         
-                        <button className="cart-btn user-only" onClick={showPage('cart')}>
+                        <button className="cart-btn user-only" onClick={()=>showPage('cart')}>
                             <i className="fas fa-shopping-cart"></i>
                             <span className="cart-count" id="cart-count">0</span>
                         </button>
 
                         <div className="user-menu">
-                            <button className="btn btn-secondary" onClick={showPage('profile')}>
+                            <button className="btn btn-secondary" onClick={()=>showPage('profile')}>
                                 <i className="fas fa-user"></i>
-                                <span id="user-name">User</span>
+                                <span id="user-name">{userName}</span>
                             </button>
                         </div>
                     </div>
