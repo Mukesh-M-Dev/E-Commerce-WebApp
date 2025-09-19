@@ -8,7 +8,15 @@ const HeaderView = ({userName,showPage}) => {
 
     }
     function toggleTheme (){
-        
+        document.body.setAttribute('data-theme', document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        const themeIcon = document.getElementById('theme-icon');
+        if (document.body.getAttribute('data-theme') === 'dark') {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
     }
   return (
     <header>
@@ -25,9 +33,9 @@ const HeaderView = ({userName,showPage}) => {
 
                     <nav className="nav-menu" id="nav-menu">
                         <a href="#" className="nav-link active" onClick={()=>showPage('home')} data-page="home">Home</a>
-                        <a href="#" className="nav-link" onClick={()=>showPage('products')} data-page="products">Products</a>
-                        <a href="#" className="nav-link" onClick={()=>showPage('categories')} data-page="categories">Categories</a>
-                        <a href="#" className="nav-link user-only" onClick={()=>howPage('orders')} data-page="orders">My Orders</a>
+                        <a href="#" className="nav-link" onClick={()=>showPage('product')} data-page="products">Products</a>
+                        <a href="#" className="nav-link" onClick={()=>showPage('category')} data-page="categories">Categories</a>
+                        <a href="#" className="nav-link user-only" onClick={()=>showPage('order')} data-page="orders">My Orders</a>
                         <a href="#" className="nav-link admin-only hidden" onClick={()=>showPage('admin')} data-page="admin">Admin Panel</a>
                     </nav>
 
@@ -43,7 +51,7 @@ const HeaderView = ({userName,showPage}) => {
                             <i className="fas fa-shield-alt"></i> ADMIN
                         </div>
                         
-                        <button className="theme-toggle" onClick={toggleTheme()}>
+                        <button className="theme-toggle" onClick={toggleTheme}>
                             <i className="fas fa-moon" id="theme-icon"></i>
                         </button>
                         

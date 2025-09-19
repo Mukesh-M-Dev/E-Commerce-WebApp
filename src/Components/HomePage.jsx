@@ -1,54 +1,40 @@
 import React,{useState} from 'react'
-import ProfileView from '../View/ProfileView'
+import ProfileView from '../View/Profile/ProfileView'
 import HeaderView from '../View/HeaderView';
 import CartView from '../View/CartView';
-import ProdcutView from '../View/ProdcutView';
+import ProductView from '../View/ProductView';
 import OrderView from '../View/OrderView';
+import CategoryView from '../View/CategoryView';
 
-const HomePage = ({userName}) => {
+const HomePage = ({userName,checkAuthPage}) => {
      const [currentPage, setCurrentPage] = useState("");
 
   const components = {
     profile: ProfileView,
     cart: CartView,
-    produt: ProdcutView,
-    order: OrderView
+    product: ProductView,
+    order: OrderView,
+    category: CategoryView,
   };
 
   const DynamicComponent = components[currentPage];
 
      function showPage(page){
+       // alert(page)
         setCurrentPage(page);
-    }
-    function toggleMobileMenu(page){
-        console.log(page)
-    }
-    function searchProducts (){
-
-    }
-    function toggleTheme (){
-        
     }
     function showAddProductModal (){
         
     }
-    function filterProducts (){
-
-    }
-    function checkout (){
-        
-    }
-    function showProfileTab(){
-        
-    }
-    function logout (){
-
+    function logout (value){
+        //alert("from home page", value);
+        checkAuthPage(value);
     }
   return (
     <div id="main-app" className="">
         <HeaderView userName={userName} showPage={showPage}/>
     <main>
-        {DynamicComponent ? <DynamicComponent /> :
+        {DynamicComponent ? <DynamicComponent logout={logout}/> :
             <section id="home" className="page-section active">
                 <div className="container">
                     <div className="hero">

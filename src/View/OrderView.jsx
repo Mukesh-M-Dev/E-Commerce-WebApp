@@ -6,7 +6,7 @@ const OrderView = () => {
     }
   return (
     
-            <section id="orders" className="page-section">
+            <section id="orders" className="page-section active">
                 <div className="container">
                     <div className="breadcrumb">
                         <a href="#" onClick={showPage('home')}>Home</a>
