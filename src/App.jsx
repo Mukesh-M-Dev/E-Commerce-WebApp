@@ -1,13 +1,11 @@
 import { useEffect, useState, useRef } from 'react'
 import './App.css'
-import HeaderView from './View/HeaderView'
 import HomePage from './Components/HomePage'  
 import ToastView from './View/ToastView'
 import SplashPage from './Components/SplashPage'
 import { RegisterPage } from './Components/RegisterPage'
 import LoginPage from './Components/LoginPage'
 function App() {
-  const [count, setCount] = useState(0)
   const [splash, setSplash] = useState(true);
   const [access, setAccess] = useState(false);
   const [authPage, setAuthPage] = useState("Login");
@@ -22,8 +20,10 @@ function App() {
     setAccess(true);
     setUserName(name);
   }
-  function validateAuthPage(value){
-    setAuthPage(value);
+  function validateAuthPage(value = "Login"){
+    //alert("from app", value);
+    setAuthPage(value ? value : "Login");
+    setAccess(false)
   }
 
    const toastRef = useRef();
@@ -35,9 +35,10 @@ function App() {
     <>
     <ToastView ref={toastRef}/>
    {!access ? 
-   (splash ? <SplashPage/> : (authPage === "Login" ? <LoginPage checkAccess={ValidateAccess} checkAuthPage={validateAuthPage} showToast={showToast}/> : <RegisterPage checkAuthPage={validateAuthPage} showToast={showToast}/> ) )
+   (splash ? <SplashPage/> : (authPage === "Login" ?
+     <LoginPage checkAccess={ValidateAccess} checkAuthPage={validateAuthPage} showToast={showToast}/> : <RegisterPage checkAuthPage={validateAuthPage} showToast={showToast}/> ) )
    :
-     (<HomePage userName={name}/>)
+     (<HomePage userName={name} checkAuthPage={validateAuthPage}/>)
   } 
       
 

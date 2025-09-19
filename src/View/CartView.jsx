@@ -4,32 +4,11 @@ const CartView = () => {
       function showPage(page){
         console.log(page)
     }
-    function toggleMobileMenu(page){
-        console.log(page)
-    }
-    function searchProducts (){
-
-    }
-    function toggleTheme (){
-        
-    }
-    function showAddProductModal (){
-        
-    }
-    function filterProducts (){
-
-    }
     function checkout (){
         
     }
-    function showProfileTab(){
-        
-    }
-    function logout (){
-
-    }
   return (
-            <section id="cart" className="page-section">
+            <section id="cart" className="page-section active">
                 <div className="container">
                     <div className="breadcrumb">
                         <a href="#" onClick={showPage('home')}>Home</a>
@@ -48,7 +27,7 @@ const CartView = () => {
                         </div>
                     </div>
 
-                    <div className="cart-summary" id="cart-summary" style={{display: "none"}}>
+                    <div className="cart-summary" id="cart-summary">
                         <h3 className="summary-title">Order Summary</h3>
                         <div className="summary-row">
                             <span>Subtotal:</span>

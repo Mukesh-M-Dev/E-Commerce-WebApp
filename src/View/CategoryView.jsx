@@ -4,32 +4,9 @@ const CategoryView = () => {
       function showPage(page){
         console.log(page)
     }
-    function toggleMobileMenu(page){
-        console.log(page)
-    }
-    function searchProducts (){
-
-    }
-    function toggleTheme (){
-        
-    }
-    function showAddProductModal (){
-        
-    }
-    function filterProducts (){
-
-    }
-    function checkout (){
-        
-    }
-    function showProfileTab(){
-        
-    }
-    function logout (){
-
-    }
+    
   return (
-            <section id="categories" className="page-section">
+            <section id="categories" className="page-section active">
                 <div className="container">
                     <div className="breadcrumb">
                         <a href="#" onClick={showPage('home')}>Home</a>
