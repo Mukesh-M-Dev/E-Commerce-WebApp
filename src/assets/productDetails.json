@@ -1,0 +1,138 @@
+[
+    {
+        "id": "smartphone-1",
+        "name": "Premium Smartphone",
+        "brand": "TechBrand",
+        "category": "smartphones",
+        "icon": "fas fa-mobile-alt",
+        "description": "Latest flagship smartphone with advanced camera system and powerful processor.",
+        "basePrice": 699.99
+    },
+    {
+        "id": "smartphone-2",
+        "name": "Gaming Smartphone",
+        "brand": "GameTech",
+        "category": "smartphones",
+        "icon": "fas fa-gamepad",
+        "description": "High-performance gaming smartphone with cooling system and high refresh rate display.",
+        "basePrice": 799.99
+    },
+    {
+        "id": "laptop-1",
+        "name": "Ultrabook Pro",
+        "brand": "LaptopCorp",
+        "category": "laptops",
+        "icon": "fas fa-laptop",
+        "description": "Lightweight ultrabook perfect for professionals and students.",
+        "basePrice": 999.99
+    },
+    {
+        "id": "laptop-2",
+        "name": "Gaming Laptop",
+        "brand": "GameBook",
+        "category": "laptops",
+        "icon": "fas fa-laptop-code",
+        "description": "Powerful gaming laptop with dedicated graphics and RGB keyboard.",
+        "basePrice": 1299.99
+    },
+    {
+        "id": "tablet-1",
+        "name": "Pro Tablet",
+        "brand": "TabletTech",
+        "category": "tablets",
+        "icon": "fas fa-tablet-alt",
+        "description": "Professional tablet with stylus support and high-resolution display.",
+        "basePrice": 599.99
+    },
+    {
+        "id": "headphones-1",
+        "name": "Wireless Headphones",
+        "brand": "AudioTech",
+        "category": "headphones",
+        "icon": "fas fa-headphones",
+        "description": "Premium wireless headphones with noise cancellation.",
+        "basePrice": 299.99
+    },
+    {
+        "id": "headphones-2",
+        "name": "Gaming Headset",
+        "brand": "GameAudio",
+        "category": "headphones",
+        "icon": "fas fa-headset",
+        "description": "Professional gaming headset with surround sound and RGB lighting.",
+        "basePrice": 149.99
+    },
+    {
+        "id": "earbuds-1",
+        "name": "True Wireless Earbuds",
+        "brand": "AudioBuds",
+        "category": "headphones",
+        "icon": "fas fa-music",
+        "description": "Compact true wireless earbuds with charging case.",
+        "basePrice": 179.99
+    },
+    {
+        "id": "camera-1",
+        "name": "DSLR Camera",
+        "brand": "PhotoPro",
+        "category": "cameras",
+        "icon": "fas fa-camera",
+        "description": "Professional DSLR camera with interchangeable lenses.",
+        "basePrice": 899.99
+    },
+    {
+        "id": "camera-2",
+        "name": "Action Camera",
+        "brand": "ActionCam",
+        "category": "cameras",
+        "icon": "fas fa-video",
+        "description": "Waterproof action camera for adventures and sports.",
+        "basePrice": 199.99
+    },
+    {
+        "id": "keyboard-1",
+        "name": "Mechanical Keyboard",
+        "brand": "KeyTech",
+        "category": "accessories",
+        "icon": "fas fa-keyboard",
+        "description": "RGB mechanical gaming keyboard with customizable switches.",
+        "basePrice": 129.99
+    },
+    {
+        "id": "mouse-1",
+        "name": "Gaming Mouse",
+        "brand": "MouseTech",
+        "category": "accessories",
+        "icon": "fas fa-mouse",
+        "description": "High-precision gaming mouse with programmable buttons.",
+        "basePrice": 79.99
+    },
+    {
+        "id": "monitor-1",
+        "name": "4K Monitor",
+        "brand": "DisplayTech",
+        "category": "accessories",
+        "icon": "fas fa-desktop",
+        "description": "Ultra-high definition 4K monitor for professional work.",
+        "basePrice": 399.99
+    },
+    {
+        "id": "speaker-1",
+        "name": "Bluetooth Speaker",
+        "brand": "SoundTech",
+        "category": "accessories",
+        "icon": "fas fa-volume-up",
+        "description": "Portable Bluetooth speaker with 360-degree sound.",
+        "basePrice": 99.99
+    },
+    {
+        "id": "charger-1",
+        "name": "Wireless Charger",
+        "brand": "PowerTech",
+        "category": "accessories",
+        "icon": "fas fa-battery-full",
+        "description": "Fast wireless charging pad compatible with all devices.",
+        "basePrice": 49.99
+    }
+]
+

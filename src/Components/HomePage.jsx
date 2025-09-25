@@ -1,10 +1,10 @@
 import React,{useState} from 'react'
 import ProfileView from '../View/Profile/ProfileView'
-import HeaderView from '../View/HeaderView';
-import CartView from '../View/CartView';
-import ProductView from '../View/ProductView';
-import OrderView from '../View/OrderView';
-import CategoryView from '../View/CategoryView';
+import HeaderView from '../View/Header/HeaderView';
+import CartView from '../View/Cart/CartView';
+import ProductView from '../View/Prodcut/ProductView';
+import OrderView from '../View/Order/OrderView';
+import CategoryView from '../View/Category/CategoryView';
 
 const HomePage = ({userName,checkAuthPage}) => {
      const [currentPage, setCurrentPage] = useState("");

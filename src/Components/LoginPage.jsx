@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ToastView from '../View/ToastView';
+import ToastView from '../View/ReuseViews/ToastView';
 
 const LoginPage = ({checkAccess,checkAuthPage,showToast}) => {
     const [name,setName] = useState("");
@@ -27,10 +27,7 @@ const LoginPage = ({checkAccess,checkAuthPage,showToast}) => {
         }else{
             showToast("Invalid Details","error")
         }
-        //console.log(JSON.parse(userInfo));
-            //checkAccess();
-        
-        //
+           // checkAccess();
     }
   return (
     
