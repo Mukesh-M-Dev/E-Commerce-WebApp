@@ -1,0 +1,9 @@
+
+[
+    { "id": "smartphones", "name": "Smartphones", "icon": "fas fa-mobile-alt", "count": 0 },
+    { "id": "laptops", "name": "Laptops", "icon": "fas fa-laptop", "count": 0 },
+    { "id": "tablets", "name": "Tablets", "icon": "fas fa-tablet-alt", "count": 0 },
+    { "id": "headphones", "name": "Headphones", "icon": "fas fa-headphones", "count": 0 },
+    { "id": "accessories", "name": "Accessories", "icon": "fas fa-mouse", "count": 0 },
+    { "id": "cameras", "name": "Cameras", "icon": "fas fa-camera", "count": 0 }
+]

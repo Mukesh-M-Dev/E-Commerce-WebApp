@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import './App.css'
 import HomePage from './Components/HomePage'  
-import ToastView from './View/ToastView'
+import ToastView from './View/ReuseViews/ToastView'
 import SplashPage from './Components/SplashPage'
 import { RegisterPage } from './Components/RegisterPage'
 import LoginPage from './Components/LoginPage'
