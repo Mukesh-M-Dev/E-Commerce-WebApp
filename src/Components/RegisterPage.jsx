@@ -9,42 +9,38 @@ export const RegisterPage = ({checkAuthPage, showToast}) => {
         confirmpassword:"",
         adminKey:""
     })
-    function showLogin(){
-
-    }
     function selectRegisterRole(){
         
     }
     function createUserInfo(){
         if(userInfo.userName && userInfo.password && userInfo.mail && userInfo.confirmpassword){
             if(userInfo.password === userInfo.confirmpassword){
-                //if(userInfo.adminKey == adminKey){
-                    const storeUser =localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : [] ;
-                    
-                    if(storeUser){
-                        let checkMail = storeUser.some((item)=>{
-                            return item.mail == userInfo.mail
-                        })
-                        if(checkMail){
-                         showToast("User Already Exist!!!","error");
-                         return false;
-                        }
-                        storeUser.push(({id: storeUser ? storeUser.length : 0, ...userInfo}))
+                fetch('https://apihostpilot.azurewebsites.net/user/api/adduser',{
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({name: userInfo.userName, email: userInfo.mail, password: userInfo.password})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.success){
+                        showToast(data.message,"success");
+                        checkAuthPage("Login");
                     }else{
-                        storeUser.push({id: 0, ...userInfo})
+                        showToast(data.message,"error");
                     }
-                    localStorage.setItem("userInfo",JSON.stringify(storeUser));
-               // }else{
-                    //alert("User Created Successfulyl!!!")
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
                     showToast("User Created Successfulyl!!!","success");
                     checkAuthPage("Login");
-                //}
             }else{
-                //alert("Password Mismatch!!!")
                 showToast("Password Mismatch!!!","error");
             }
         }else{
-            //alert("Please fill all the details!!!")
             showToast("Please fill all the details!!!","error");
         }
     }
