@@ -15,7 +15,7 @@ export const RegisterPage = ({checkAuthPage, showToast}) => {
     function createUserInfo(){
         if(userInfo.userName && userInfo.password && userInfo.mail && userInfo.confirmpassword){
             if(userInfo.password === userInfo.confirmpassword){
-                fetch('https://apihostpilot.azurewebsites.net/user/api/adduser',{
+                fetch('https://apihostpilot.azurewebsites.net/api/user/adduser',{
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'

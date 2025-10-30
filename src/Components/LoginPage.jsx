@@ -8,7 +8,7 @@ const LoginPage = ({checkAccess,checkAuthPage,showToast}) => {
 
     }
     function ValidateUser(){
-        fetch('https://apihostpilot.azurewebsites.net/user/api/login',{
+        fetch('https://apihostpilot.azurewebsites.net/api/user/login',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
