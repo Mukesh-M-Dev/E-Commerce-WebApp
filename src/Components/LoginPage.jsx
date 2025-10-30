@@ -1,33 +1,32 @@
 import React, { useState } from 'react'
-import ToastView from '../View/ReuseViews/ToastView';
 
 const LoginPage = ({checkAccess,checkAuthPage,showToast}) => {
+    
     const [name,setName] = useState("");
     const [password, setPassword] = useState("");
-    const [toast, setToast] = useState("");
     function selectRole(){
 
     }
-    function showRegister(){
-
-    }
     function ValidateUser(){
-        const userInfo = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : [];
-        let userDetails = [];
-        if(userInfo.length > 0){
-            userDetails = userInfo.filter((item)=>{
-               return item.mail = name && item.password == password
-            })
-            if(userDetails.length > 0){
+        fetch('https://apihostpilot.azurewebsites.net/user/api/login',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({name,email: name, password})
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success){
                 showToast("Login Succesfull", "sucess")
-                checkAccess(userDetails[0].userName);
+                checkAccess(name);
             }else{
                 showToast("Invalid Details","error")
             }
-        }else{
-            showToast("Invalid Details","error")
-        }
-           // checkAccess();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
     }
   return (
     
@@ -53,7 +52,7 @@ const LoginPage = ({checkAccess,checkAuthPage,showToast}) => {
                     </button>
                 </div>
 
-                <form id="login-form" onSubmit={ValidateUser}>
+                <form id="login-form" onSubmit={(event)=>{event.preventDefault(); ValidateUser();}}>
                     <div className="form-group">
                         <label className="form-label" label="login-email">Email Address</label>
                         <input type="email" value={name} onChange={(event)=>setName(event.target.value)} id="login-email" className="form-input" required/>
